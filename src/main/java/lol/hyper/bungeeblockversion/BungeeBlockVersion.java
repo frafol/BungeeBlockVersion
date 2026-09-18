@@ -27,7 +27,6 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
-import org.bstats.bungeecord.Metrics;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -50,14 +49,13 @@ public final class BungeeBlockVersion extends Plugin implements Listener {
         getProxy().getPluginManager().registerCommand(this, new CommandReload("bbvreload", this));
         ProxyServer.getInstance().getPluginManager().registerListener(this, joinEvent);
 
-        new Metrics(this, 9392);
         ProxyServer.getInstance().getScheduler().runAsync(this, this::checkForUpdates);
     }
 
     public void checkForUpdates() {
         GitHubReleaseAPI api;
         try {
-            api = new GitHubReleaseAPI("BungeeBlockVersion", "hyperdefined");
+            api = new GitHubReleaseAPI("BungeeBlockVersion", "frafol");
         } catch (IOException e) {
             logger.warning("Unable to check updates!");
             e.printStackTrace();

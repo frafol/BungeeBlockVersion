@@ -1,6 +1,6 @@
 name: BungeeBlockVersion
 version: ${project.version}
 main: lol.hyper.bungeeblockversion.BungeeBlockVersion
-author: hyperdefined
-website: https://www.spigotmc.org/resources/bungeeblockversion.84685/
+author: 'hyperdefined, frafol'
+website: https://github.com/frafol/VelocityBlockVersion
 description: Block certain Minecraft versions from connecting to your network.
